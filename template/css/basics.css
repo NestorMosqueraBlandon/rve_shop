@@ -1,0 +1,130 @@
+.computer__card {
+    position: relative;
+    width: 280px;
+    height: 450px;
+    background: #232323;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 10px 30px;
+}
+
+.computer__card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--element-color);
+    clip-path: circle(150px at 80% 20%);
+    transition: .5s ease-in-out;
+}
+
+.computer__card:hover::before {
+    clip-path: circle(300px at 80% -20%);
+}
+
+.computer__card::after {
+    content: "Real Vision";
+    position: absolute;
+    top: 20%;
+    left: -10%;
+    font-size: 10em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(255, 255, 255, .04);
+}
+
+.computer__card-img {
+    content: "";
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 10000;
+    width: 100%;
+    transition: .7s;
+}
+
+.computer__card:hover .computer__card-img {
+    top: 5%;
+    transform: translateY(0%);
+}
+
+.computer__card-img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate( 0deg);
+    width: 300px;
+}
+
+.computer__card-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.computer__card:hover .computer__card-content {
+    height: 260px;
+}
+
+.computer__card-content h2 {
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 0px;
+    color: var(--principal-color);
+    font-size: 1.5rem;
+}
+
+.computer__card-content .config {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+    transition: .5s;
+    margin-bottom: 70px;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.computer__card:hover .computer__card-content .config {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.computer__card-content .config h3 {
+    color: var(--principal-color);
+    font-weight: 300;
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    margin-left: 10px;
+}
+
+.computer__card-content .config span {
+    width: 22px;
+    height: 26px;
+    text-align: center;
+    line-height: 23px;
+    font-size: 11px;
+    margin: 0 13px;
+}
+
+.computer__card-content .config span :nth-child(1) {
+    margin: 0;
+}
+
+.computer__card-content a {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.computer__card-price {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 50px;
+}
